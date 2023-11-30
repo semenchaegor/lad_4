@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивне меню з Bootstrap</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    
+    body {
+      background-color: rgb( 255, 255,255);
+      background-image: url(styles/images/фон.jfif);
+      background-size:   400px 400px; 
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding-top: 56px; /* Висота фіксованого меню для компенсації */
+      
+        }
+    @media (min-width: 992px) {
+      body {
+        padding-top: 70px; /* Висота фіксованого меню для компенсації */
+      }
+    }
+    .navbar {
+      border-top: 1px solid #e9ecef; /* Тоненька стрічка вгорі */
+      border-bottom: 1px solid #e9ecef; /* Тоненька стрічка внизу */
+    }
+    input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    padding-left: 40px;
+  }
+   header img {
+    height: 30px;
+   }
+   #img1 {
+    padding-left: 50px;
+   }
+   .navbar-brand {
+      
+      font-size: 1.5rem; /* Розмір тексту логотипу */
+      font-weight: bold; /* Жирний текст */
+      color: #007bff; /* Колір тексту логотипу */
+      padding-left: 10px;
+      font-family: 'Pacifico', cursive; /* Встановлення шрифту для логотипу */
+    }
+    
+    
+    .img1 {
+      margin-left: 20px;
+      width: 200px;
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      color: #333;
+      margin: 20px 0;
+    }
+
+    /* Стилі для контейнера з відгуками */
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Стилі для кожного відгуку */
+    .review {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    /* Стилі для імені автора відгуку */
+    .review-name {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Стилі для тексту відгуку */
+    .review-text {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* Стилі для форми для залишення відгуку */
+    .review-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      max-width: 800px;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    /* Стилі для заголовка форми */
+    .review-form h2 {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Стилі для міток полів вводу */
+    .review-form label {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+      margin-right: 10px;
+    }
+
+    /* Стилі для полів вводу */
+    .review-form input, .review-form textarea {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    /* Стилі для кнопки відправлення форми */
+    .review-form button {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #fff;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    </style>
+</head>
+<body>
+  <header>
+    
+    <!-- Навігаційне меню -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Пошук">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+          Пошук
+        </button>
+      </form>
+      
+      <a class="navbar-brand" href="#"><img src="styles/images/images (1).jfif" alt="" id="img1"></a>
+      <a class="navbar-brand" href="#"><p>Палає</p></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Головна</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bootstrap.html">Про нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services1.html">Послуги</a>
+          </li>
+          
+        
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  
+  
+  <!-- Модальне вікно -->
+  <div class="modal" id="loginModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Заголовок модального вікна -->
+        <div class="modal-header">
+          <h4 class="modal-title">Авторизація</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Тіло модального вікна -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="username">Ім'я користувача:</label>
+              <input type="text" class="form-control" id="username" placeholder="Введіть ім'я користувача" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Пароль:</label>
+              <input type="password" class="form-control" id="password" placeholder="Введіть пароль" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Увійти</button>
+          </form>
+        </div>
+
+  
+        <!-- Підвал модального вікна -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <h1>Відгуки про сайт</h1>
+  <div class="reviews">
+    <!-- Приклад відгуку -->
+    <div class="review">
+      <div class="review-name">Олександр</div>
+      <div class="review-text">Дрова класні. Замови в собі та батькам. Горять довго ітепла достатньо.</div>
+    </div>
+    <div class="review">
+        <div class="review-name">Дмитро</div>
+        <div class="review-text">Ну не дуже. Брав вуголь та все ж завелика ціна як на мене..</div>
+      </div>
+      <div class="review">
+        <div class="review-name">Cruy</div>
+        <div class="review-text">Слава україні! Прокляті руські, найби ви горілиу моєму котлі місто цих дрив.</div>
+      </div>
+      <div class="review">
+          <div class="review-name">Аліна Доорошенко</div>
+          <div class="review-text"> Я, як мама 3 дітей кажу, що не скромний сімейний бюджет багатодітодітної сімї це найкраще чим можна пережити зиму.</div>
+        </div>
+    <!-- Кінець прикладу відгуку -->
+    <!-- Тут можуть бути інші відгуки -->
+  </div>
+  <div class="review-form">
+    <h2>Залиште свій відгук</h2>
+    <!-- Форма для введення імені, електронної пошти та тексту відгуку -->
+    <form method="POST" action="https://example.com/review.php">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="text">Текст:</label>
+      <textarea id="text" name="text" rows="10" cols="50" required></textarea>
+      <button type="submit">Відправити</button>
+    </form>
+    <!-- Кінець форми -->
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <div class="centr">
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+     
+  <!-- Ваш контент тут -->
+
+  <!-- Підключення Bootstrap JS та jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

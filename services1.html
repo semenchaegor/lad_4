@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивне меню з Bootstrap</title>
+  <!-- Підключення Bootstrap CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <link rel="stylesheet" href="styles/stule1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Додаткові стилі для адаптивного меню */
+    
+    body {
+      background-color: rgb( 255, 255,255);
+      background-image: url(styles/images/фон.jfif);
+      background-size:   400px 400px; 
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding-top: 56px; /* Висота фіксованого меню для компенсації */
+      
+        }
+    @media (min-width: 992px) {
+      body {
+        padding-top: 70px; /* Висота фіксованого меню для компенсації */
+      }
+    }
+    .navbar {
+      border-top: 1px solid #e9ecef; /* Тоненька стрічка вгорі */
+      border-bottom: 1px solid #e9ecef; /* Тоненька стрічка внизу */
+    }
+    input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    padding-left: 40px;
+  }
+   header img {
+    height: 30px;
+   }
+   #img1 {
+    padding-left: 50px;
+   }
+   .navbar-brand {
+      
+      font-size: 1.5rem; /* Розмір тексту логотипу */
+      font-weight: bold; /* Жирний текст */
+      color: #007bff; /* Колір тексту логотипу */
+      padding-left: 10px;
+      font-family: 'Pacifico', cursive; /* Встановлення шрифту для логотипу */
+    }
+    .text {
+       
+        min-width: 100px;
+        margin-top: 50px;
+        /* margin-left: 1%; */
+        /* margin-right: 30px; */
+        /* position: absolute; */
+    }
+    .centr {
+      text-align: center;
+    }
+    .child {
+      font-size: 20px;
+      margin-left: 20%;
+    }
+    h2 {
+      font-size: 70px;
+    }
+    .img {
+     
+    
+    position: absolute;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+      
+    }
+    .img1 {
+      margin-left: 20px;
+      width: 200px;
+      border-radius: 10px;
+    }
+    
+    </style>
+</head>
+<body>
+  <header>
+    
+    <!-- Навігаційне меню -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Пошук">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+          Пошук
+        </button>
+      </form>
+      
+      <a class="navbar-brand" href="#"><img src="styles/images/images (1).jfif" alt="" id="img1"></a>
+      <a class="navbar-brand" href="#"><p>Палає</p></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Головна</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bootstrap.html">Про нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services1.html">Послуги</a>
+          </li>
+         
+          <!-- Поле пошуку з кнопкою -->
+        
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  
+  
+  <!-- Модальне вікно -->
+  <div class="modal" id="loginModal">
+    <div class="modal-idalog">
+      <div class="modal-content">
+  
+        <!-- Заголовок модального вікна -->
+        <div class="modal-header">
+          <h4 class="modal-title">Авторизація</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Тіло модального вікна -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="username">Ім'я користувача:</label>
+              <input type="text" class="form-control" id="username" placeholder="Введіть ім'я користувача" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Пароль:</label>
+              <input type="password" class="form-control" id="password" placeholder="Введіть пароль" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Увійти</button>
+          </form>
+        </div>
+
+  
+        <!-- Підвал модального вікна -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <div class="centr">
+    <div class="centr1">
+        <div class="grid-container2">
+            <div class="image-container">
+                <div class="image-container">
+                    <a href="forma.html">
+                        <img src="styles/images/images.jfif"  class="image" alt="">
+                    </a>
+                    <div class="text-container">
+                        <p class="text">Вугілля - це надійний і доступний матеріал для опалення, який забезпечує стабільну та довготривалу тепло д
+                            ома під час холодних зимових місяців. </p>
+                    </div>
+                </div>
+            </div>
+                <div class="image-container">
+                    <div class="image-container">
+                        <a href="forma.html">
+                            <img src="styles/images/images (1).jfif"  class="image" alt="">
+                        </a>
+                        <div class="text-container">
+                            <p class="text">Дрова - традиційний та надійний спосіб опалення, який створює атмосферу затишку та тепла в вашому домі, 
+                                забезпечуючи ефективне горіння та додатковий джерело опалення для холодних зимових ночей. З натуральними дровами ви можете насолоджуватися не лише комфортом,
+                                 але і екологічною чистотою, адже вони є відновлюваним джерелом енергії та сприяють збереженню навколишнього середовища.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container2">
+                <div class="image-container">
+                    <div class="image-container">
+                        <a href="forma.html">
+                            <img src="styles/images/images (2).jfif"  class="image" alt="">
+                        </a> 
+                        <div class="text-container">
+                            <p class="text">Палети для топки - це практичний і організований спосіб зберігання і транспортування пального,
+                                 який дозволяє зекономити час і забезпечує надійний захист від вологи, забруднень та забезпечує легкий доступ 
+                                 до пального для вашої топки під час холодної зими.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="image-container">
+                        <div class="image-container">
+                            <a href="forma.html"><img src="styles/images/images (3).jfif"  class="image" alt=""></a>
+                            <div class="text-container">
+                                <p class="text">Щепа для топки - це інноваційний і стильний спосіб опалення вашого дому, який поєднує в собі природну красу деревини та високу 
+                                    теплову ефективність. Вона горить чисто та безпечно, створюючи атмосферу затишку, а висока якість щепи 
+                                    забезпечує довготривале горіння та мінімізує необхідність у постійному додаванні пального.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    
+    
+  <!-- Ваш контент тут -->
+
+  <!-- Підключення Bootstrap JS та jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+header{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    }
+
+    nav ul {
+        text-align: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        display: inline; /* Розмістити посилання в рядок */
+        margin-right: 10px; /* Додатковий відступ між посиланнями */
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }

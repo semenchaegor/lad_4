@@ -1,0 +1,48 @@
+
+    .grid-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0fr;
+    grid-gap: 5px/* Змініть значення на ваш смак */
+    /* grid-row-gap: 4px; */
+    }
+    .centr1 {
+        text-align: center;
+    }
+    .image-container {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 350px;
+        height: 250px;
+        transition: transform 0.3s ease; /* Додаємо анімацію для зміни масштабу */
+    }
+
+    .text-container {
+        position: absolute;
+        top: 100%; /* По замовчуванню текст прихований внизу */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Фон для тексту */
+        transition: top 0.3s ease; /* Додаємо анімацію для зміни положення тексту */
+    }
+
+    .text {
+        color: #fff; /* Колір тексту */
+        padding: 10px;
+    }
+
+    /* При наведенні мишки на контейнер, змінюємо масштаб зображення та показуємо текст */
+    .image-container:hover .image {
+        transform: scale(1.1); /* Збільшуємо масштаб зображення */
+    }
+
+    .image-container:hover .text-container {
+        top: 0; /* Показуємо текст, переміщаючи його вгору */
+    }
+    a:hover {
+        color: red; /* Змініть колір на той, який вам потрібен */
+    }

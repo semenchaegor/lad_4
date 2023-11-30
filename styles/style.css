@@ -1,0 +1,93 @@
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.images {
+    text-align: center; 
+}
+
+img{
+    border-radius: 15px;
+}
+button:hover {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки з однаковою шириною */
+    grid-template-rows: 100px 200px; 
+}
+.grid-item {
+    font-family:  Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Times, serif;
+
+}
+.grid1-container {
+    display: flex;
+
+}
+.grid-container2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 5px;
+}
+.continent-block {
+    width: 60%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 5px #888888;
+    cursor: pointer;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s ease; /* Додаємо анімацію для зміни масштабу */
+}
+
+.text-container {
+    position: absolute;
+    top: 100%; /* По замовчуванню текст прихований внизу */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Фон для тексту */
+    transition: top 0.3s ease; /* Додаємо анімацію для зміни положення тексту */
+}
+
+.text {
+    color: #fff; /* Колір тексту */
+    padding: 10px;
+}
+
+/* При наведенні мишки на контейнер, змінюємо масштаб зображення та показуємо текст */
+.image-container:hover .image {
+    transform: scale(1.1); /* Збільшуємо масштаб зображення */
+}
+
+.image-container:hover .text-container {
+    top: 0; /* Показуємо текст, переміщаючи його вгору */
+}

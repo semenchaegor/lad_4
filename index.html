@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивне меню з Bootstrap</title>
+  <!-- Підключення Bootstrap CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Додаткові стилі для адаптивного меню */
+    
+    body {
+      background-color: rgb( 255, 255,255);
+      background-image: url(styles/images/фон.jfif);
+      background-size:   400px 400px; 
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding-top: 56px; /* Висота фіксованого меню для компенсації */
+      
+        }
+    @media (min-width: 992px) {
+      body {
+        padding-top: 70px; /* Висота фіксованого меню для компенсації */
+      }
+    }
+    .navbar {
+      border-top: 1px solid #e9ecef; /* Тоненька стрічка вгорі */
+      border-bottom: 1px solid #e9ecef; /* Тоненька стрічка внизу */
+    }
+    input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    padding-left: 40px;
+  }
+   header img {
+    height: 30px;
+   }
+   #img1 {
+    padding-left: 50px;
+   }
+   .navbar-brand {
+      
+      font-size: 1.5rem; /* Розмір тексту логотипу */
+      font-weight: bold; /* Жирний текст */
+      color: #007bff; /* Колір тексту логотипу */
+      padding-left: 10px;
+      font-family: 'Pacifico', cursive; /* Встановлення шрифту для логотипу */
+    }
+    .text {
+       
+        min-width: 100px;
+        margin-top: 50px;
+        /* margin-left: 1%; */
+        /* margin-right: 30px; */
+        /* position: absolute; */
+    }
+    .centr {
+      text-align: center;
+    }
+    .child {
+      font-size: 20px;
+      margin-left: 20%;
+    }
+    h2 {
+      font-size: 70px;
+    }
+    .img {
+     
+    
+    position: absolute;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+      
+    }
+    .img1 {
+      margin-left: 20px;
+      width: 200px;
+      border-radius: 10px;
+    }
+    .text p {
+      font-size: 25px;
+    }
+    nav ul h1 {
+      text-align: center;
+    }
+    
+    #link-up{
+    color: blue;
+}
+
+#link-up:hover{
+    color: blueviolet;
+}
+.fixed-text {
+font-family:"" ;
+border: 1px solid black;
+color: blue;
+position: fixed;
+bottom:  0; 
+left: 0; /* Розташовуємо текст у лівому кутку */
+padding: 2px; /* Відступи від краю */
+font-size: 20px;
+font-weight: bold;
+opacity: 0.7; /* Значення 0.5 робить текст наполовину прозорим */
+}
+    </style>
+</head>
+<body>
+  <header>
+    
+    <!-- Навігаційне меню -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Пошук">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+          Пошук
+        </button>
+      </form>
+      
+      <a class="navbar-brand" href="#"><img src="styles/images/images (1).jfif" alt="" id="img1"></a>
+      <a class="navbar-brand" href="#"><p>Палає</p></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Головна</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bootstrap.html">Про нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services1.html">Послуги</a>
+          </li>
+          <
+          <!-- Поле пошуку з кнопкою -->
+        
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  
+  
+  <!-- Модальне вікно -->
+  <div class="modal" id="loginModal">
+    <div class="modal-idalog">
+      <div class="modal-content">
+  
+        <!-- Заголовок модального вікна -->
+        <div class="modal-header">
+          <h4 class="modal-title">Авторизація</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Тіло модального вікна -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="username">Ім'я користувача:</label>
+              <input type="text" class="form-control" id="username" placeholder="Введіть ім'я користувача" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Пароль:</label>
+              <input type="password" class="form-control" id="password" placeholder="Введіть пароль" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Увійти</button>
+          </form>
+        </div>
+
+  
+        <!-- Підвал модального вікна -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <div class="centr">
+    
+    <div class="text">
+      <h1 class="centr">Чому обрати ТеплоМайстер?</h1>
+      <p>
+
+        Досвід: Ми працюємо у галузі опалення вже протягом багатьох років і накопичили багато довіри та довіри клієнтів.
+        
+        Якість: Ми пропонуємо тільки високоякісні продукти, відомі своєю надійністю та тривкістю.
+        
+        Екологія: Ми пильнуємо за екологічністю наших палив та обладнання. Багато наших продуктів - це екологічно чисті альтернативи.
+        
+        Обслуговування клієнтів: Наша команда завжди готова відповісти на ваші запити та допомогти вам підібрати найкраще рішення для вашого об'єкту.
+        
+        Нехай ваша зима буде теплою та затишною з продукцією від "ТеплоМайстра". Замовте вже сьогодні та переконайтесь в якості наших послуг і товарів!
+        </p>
+    </div>
+  </div>
+
+  <div class="img">
+
+    <img  class="img1" src="styles/images/tg1.jfif" alt="" >
+    <img class="img1" src="styles/images/tg2.jfif" alt="" >
+    <img class="img1" src="styles/images/tg4.jfif" alt="">
+    <img class="img1" src="styles/images/tg5.jfif" alt="">
+
+  </div>
+   <div class="img">
+
+   </div>
+   <div class="img">
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+   <nav>
+     <ul>
+       <h1 > А тепер чому не газ чи електро :</h1>
+      <div class="child">Ефективна та зручна опалювальна система: Придбання високоякісного матеріалу для топки,
+           такого як дрова або вугілля, гарантує вам ефективне та надійне джерело тепла в холодну пору року. Ваша топка буде працювати на повну потужність, забезпечуючи комфортну температуру в вашому будинку.</div>
+          </ul>
+      <ul>
+        <div class="child">Заощадження грошей: Купуючи матеріал для топки перед зимою, ви можете скористатися сезонними знижками та акціями. Це дозволить вам зекономити кошти, порівняно з тими, хто купує пальне
+             вже в холодний період, коли ціни часто зростають.</div>
+      </ul>
+      <ul>
+        <div class="child">Екологічно чисте опалення: Використання натуральних деревних дров або вугілля може бути більш екологічно дружним варіантом, ніж інші джерела енергії, такі як газ або нафта. Ваш внесок у збереження
+             навколишнього середовища може бути значущим.</div>
+      </ul>
+      <ul>
+        <div class="child"> Екологічно чисте опалення: Використання натуральних деревних дров або вугілля може бути більш екологічно дружним варіантом, ніж інші джерела енергії,
+             такі як газ або нафта. Ваш внесок у збереження навколишнього середовища може бути значущим.</div>
+      </ul>
+      <ul>
+
+        <div class="child">Створення атмосфери: Вогонь в каміні або топці створює унікальну атмосферу в вашому домі. Ви можете насолоджуватися затишком і романтикою, 
+            які приносить тепло топки в холодні зимові вечори.</div>
+      </ul>
+      <ul>
+        <h1>До речі...</h1>
+
+        <div class="child">Вуголь дрова є відновлюваним джерелом енергії,
+           що означає, що вони не вичерпуються і не забруднюють навколишнє середовище. Вуголь дрова утворюються з деревини, яка піддається піролізу (термічному розкладанню) в умовах обмеженого доступу повітря. При цьому вуглець, який міститься в деревині, не окислюється і не виділяє вуглекислого газу, який є одним з головних винуватців глобального потепління. Таким чином, вуголь дрова допомагають 
+          зберегти природні ресурси і зменшити вплив на клімат.</div>
+      </ul>
+      <ul>
+        <div class="child"> уголь дрова мають високу теплотворну 
+          здатність, що означає, що вони виділяють багато тепла при 
+          спалюванні. За даними [Українського науково-дослідного інституту вугільної промисловості], вуголь дрова мають середню теплотворну здатність 24,5 МДж/кг, що вище, 
+          ніж у деревини (16,2 МДж/кг) або торфу (10,8 МДж/кг).</div>
+      </ul>
+   </nav>
+   <p class="fixed-text" ><a id="link-up" href="#top">  🔼 </a></p>
+  
+  <!-- Ваш контент тут -->
+
+  <!-- Підключення Bootstrap JS та jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
